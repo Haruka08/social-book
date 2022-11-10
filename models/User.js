@@ -41,10 +41,10 @@ const userSchema = new Schema(
 );
 
 // function to delete on cascade when user is removed
-userSchema.pre('remove', function(next) {
-  Thought.remove({User_id: this._id}).exec();
-  next();
-});
+// userSchema.pre('remove', function(next) {
+//   Thought.remove({User_id: this._id}).exec();
+//   next();
+// });
 
 // Create a virtual property `fullName` that gets and sets the user's full name
 userSchema
