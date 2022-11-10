@@ -44,6 +44,14 @@ const thoughtSchema = new Schema(
   }
 );
 
+// Create a virtual property `fullName` that gets and sets the user's full name
+thoughtSchema
+  .virtual('reactionCount')
+  // Getter
+  .get(function () {
+    return `${this.reactions.length}`;
+  });
+
 // Initialize thought model
 const Thought = model('thought', thoughtSchema);
 
