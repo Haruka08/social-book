@@ -1,6 +1,6 @@
 const { connect, connection } = require('mongoose');
 
-connect('mongodb://localhost/developersApplications', {
+connect('mongodb://localhost/socialbookdb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
