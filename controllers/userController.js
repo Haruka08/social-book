@@ -68,7 +68,7 @@ module.exports = {
     },
     // delete a friend from friends array - WORKING
   deleteFriend(req, res) {
-    User.findOneAndDelete({ _id: req.params.friendId },
+    User.findOneAndDelete({ friends: req.params.friendId },
       )
         .then((user) =>
           !user
