@@ -24,7 +24,7 @@ module.exports = {
     .then((thought) => {
       return User.findOneAndUpdate(
         { username: req.body.username },
-        { $addToSet: { thoughs: thought._id } },
+        { $set: { thoughts: thought._id } },
         { new: true }
       );
     })
@@ -79,7 +79,7 @@ module.exports = {
   createReaction(req, res) {
     Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $addToSet: { responses: req.body } },
+        { $addToSet: { reactions: req.body.reactions } },
         { runValidators: true, new: true }
       )
         .then((thought) =>
@@ -91,11 +91,11 @@ module.exports = {
     },
     // delete a friend from friends array
   deleteReaction(req, res) {
+    console.log(req.body)
     Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $pull: { reactions: { responseId: req.params.responseId } } },
-        { runValidators: true, new: true }
-      )
+        {$pull: {reactions: { _id: req.body.reactionId }}},
+        {new: true})
         .then((thought) =>
           !thought
             ? res.status(404).json({ message: 'No thought with this id!' })
