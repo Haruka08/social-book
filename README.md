@@ -3,7 +3,7 @@ an API for a social network web application where users can share their thoughts
 
 ## Links to the webpage and repository
 
-To access the walk through video use [Social-Book video walk through]()
+To access the walk through video use [Social-Book video walk through](https://drive.google.com/file/d/1GeyyyUYWm1_SV2s3_Z-_1sEDwgM-tvQC/view)
 
 To access the GitHub repository use [GitHub Repository social-book](https://github.com/Haruka08/social-book)
 
