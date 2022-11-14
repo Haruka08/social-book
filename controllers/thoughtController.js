@@ -79,7 +79,7 @@ module.exports = {
   createReaction(req, res) {
     Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $addToSet: { reactions: req.body.reactions } },
+        { $addToSet: { reactions: {reactionBody: req.body.reactionBody, username: req.body.username } } },
         { runValidators: true, new: true }
       )
         .then((thought) =>
